@@ -95,7 +95,6 @@ static inline void iint_lockdep_annotate(struct integrity_iint_cache *iint,
 static void iint_init_always(struct integrity_iint_cache *iint,
 			     struct inode *inode)
 {
-<<<<<<< HEAD
 #ifdef CONFIG_FIVE
 	kfree(iint->five_label);
 	iint->five_label = NULL;
@@ -104,8 +103,6 @@ static void iint_init_always(struct integrity_iint_cache *iint,
 	iint->five_signing = false;
 #endif
 	kfree(iint->ima_hash);
-=======
->>>>>>> android11-5.4.265_r00
 	iint->ima_hash = NULL;
 	iint->version = 0;
 	iint->flags = 0UL;
@@ -213,7 +210,6 @@ static void iint_init_once(void *foo)
 	struct integrity_iint_cache *iint = foo;
 
 	memset(iint, 0, sizeof(*iint));
-<<<<<<< HEAD
 #ifdef CONFIG_FIVE
 	iint->five_flags = 0UL;
 	iint->five_status = FIVE_FILE_UNKNOWN;
@@ -226,8 +222,6 @@ static void iint_init_once(void *foo)
 	iint->ima_creds_status = INTEGRITY_UNKNOWN;
 	iint->evm_status = INTEGRITY_UNKNOWN;
 	mutex_init(&iint->mutex);
-=======
->>>>>>> android11-5.4.265_r00
 }
 
 static int __init integrity_iintcache_init(void)
