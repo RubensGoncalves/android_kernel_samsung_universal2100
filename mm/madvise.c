@@ -169,7 +169,9 @@ success:
 	 */
 	vm_write_begin(vma);
 	WRITE_ONCE(vma->vm_flags, new_flags);
+	vma->vm_flags = vma_pad_fixup_flags(vma, new_flags);
 	vm_write_end(vma);
+
 out_convert_errno:
 	/*
 	 * madvise() returns EAGAIN if kernel resources, such as
