@@ -23,3 +23,4 @@ fingerprint-$(CONFIG_SENSORS_QBT2000)	+= qbt2000_common.o
 obj-$(CONFIG_SENSORS_QBT2000)			+= qbt2000_spidev.o
 fingerprint-$(CONFIG_SENSORS_QFS4008)	+= qfs4008_common.o
 obj-$(CONFIG_SENSORS_QFS4008)			+= qfs4008_spidev.o
+obj-$(CONFIG_SENSORS_GW9558X)			+= gw9558x_spidev.o
